@@ -1,3 +1,6 @@
+function Facilities() {
+  return <div>Facilities Page</div>;
+}
 
 
 

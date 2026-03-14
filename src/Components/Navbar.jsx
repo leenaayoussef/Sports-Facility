@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/dumbbell.png';
+import './Navbar.css'; 
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
