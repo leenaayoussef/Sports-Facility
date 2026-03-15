@@ -10,7 +10,7 @@ function Footer() {
       <div className="footer-container">
 
         <div className="footer-brand">
-          {/* <img src={logo} alt="Logo" /> */}
+          <img src={logo} alt="Logo" className='Icon-footer'></img>
           <p>Champions Arena</p>
         </div>
 
