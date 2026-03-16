@@ -1,0 +1,558 @@
+/* Membership Page Style */
+.membership-page {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F2F3F3;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.membership-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 32px 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: #E5E7E9;
+  color: #1A2B3D;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 60px;
+  white-space: nowrap;
+  font-weight: 800;
+  color: #1A2B3D;
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #4A5568;
+  max-width: 650px;
+  margin: 4px auto 5;
+  line-height: 1.7;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Price Section */
+.pricing-section {
+  padding: 32px 32px 64px;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 32px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 340px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-card.popular {
+  background: #1A2B3D;
+  color: white;
+  transform: scale(1.05);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #BEF264;
+  color: #1A2B3D;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.plan-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin: 0 0 16px;
+  color: #718096;
+}
+
+.pricing-card.popular .plan-name {
+  color: #BEF264;
+}
+
+.plan-price {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.currency {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #1A2B3D;
+}
+
+.pricing-card.popular .currency {
+  color: white;
+}
+
+.amount {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+  color: #1A2B3D;
+}
+
+.pricing-card.popular .amount {
+  color: white;
+}
+
+.period {
+  font-size: 16px;
+  font-weight: 500;
+  color: #A0AEC0;
+  margin-left: 4px;
+  margin-top: 24px;
+}
+
+.pricing-card.popular .period {
+  color: #A0AEC0;
+}
+
+.plan-description {
+  font-size: 14px;
+  color: #718096;
+  text-align: center;
+  margin: 0 0 32px;
+  font-weight: 400;
+}
+
+.pricing-card.popular .plan-description {
+  color: #CBD5E0;
+}
+
+.plan-button {
+  display: block;
+  width: 100%;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.plan-button.primary {
+  background: #BEF264;
+  color: #1A2B3D;
+}
+
+.plan-button.primary:hover {
+  background: #A3E635;
+  transform: translateY(-2px);
+}
+
+.plan-button.secondary {
+  background: #F2F3F3;
+  color: #1A2B3D;
+}
+
+.plan-button.secondary:hover {
+  background: #E5E7E9;
+}
+
+.plan-button.dark {
+  background: #1A2B3D;
+  color: white;
+}
+
+.plan-button.dark:hover {
+  background: #2D3E50;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A5568;
+}
+
+.pricing-card.popular .plan-features li {
+  color: #E2E8F0;
+}
+
+.plan-features li.not-included {
+  color: #CBD5E0;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.plan-features li.included .check-icon {
+  background: #BEF264;
+  color: #1A2B3D;
+}
+
+.pricing-card.popular .plan-features li.included .check-icon {
+  background: #BEF264;
+  color: #1A2B3D;
+}
+
+.plan-features li.not-included .check-icon {
+  background: transparent;
+  color: #CBD5E0;
+}
+
+/* Comparison Section */
+.comparison-section {
+  padding: 64px 32px;
+  background: white;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1A2B3D;
+  text-align: center;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #718096;
+  text-align: center;
+  margin: 0 0 48px;
+  font-weight: 400;
+}
+
+.comparison-table-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.comparison-table thead tr {
+  border-bottom: 2px solid #1A2B3D;
+}
+
+.comparison-table th {
+  padding: 16px 24px;
+  text-align: center;
+  font-weight: 700;
+  color: #1A2B3D;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid #E5E7E9;
+}
+
+.comparison-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.comparison-table td {
+  padding: 20px 24px;
+  text-align: center;
+  color: #4A5568;
+}
+
+.feature-name {
+  text-align: left !important;
+  font-weight: 500;
+  color: #1A2B3D;
+}
+
+.check {
+  color: #BEF264;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.cross {
+  color: #CBD5E0;
+  font-weight: 400;
+}
+
+.text-value {
+  font-size: 14px;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* CTA Section */
+.cta-section {
+  background: #1A2B3D;
+  padding: 60px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.cta-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 5%;
+}
+
+.cta-image {
+  flex: 1;
+  max-width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-right: 5%;
+}
+
+.cta-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+}
+
+.cta-description {
+  font-size: 17px;
+  color: #CBD5E0;
+  line-height: 1.8;
+  margin: 0 0 40px;
+  font-weight: 400;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #BEF264;
+  color: #1A2B3D;
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: #A3E635;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cta-image {
+  flex: 1;
+  max-width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 44px;
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+    order: -1;
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cta-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 48px 32px;
+  }
+  
+  .cta-content {
+    max-width: 100%;
+  }
+  
+  .cta-image {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pricing-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .amount {
+    font-size: 48px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .comparison-table {
+    font-size: 14px;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 14px 16px;
+  }
+  
+  .cta-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 30px;
+  }
+  
+  .amount {
+    font-size: 40px;
+  }
+  
+  .plan-button {
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
