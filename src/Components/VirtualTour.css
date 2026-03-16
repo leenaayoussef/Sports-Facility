@@ -1,0 +1,245 @@
+.tour-section {
+    padding: 40px 80px;
+}
+
+.tour-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.tour-badge {
+    font-size: 12px;
+    color: #f97316;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.tour-title {
+    margin: 0 0 6px;
+    font-weight: 32px;
+}
+
+.tour-subtitle {
+    margin: 0;
+    color: #555;
+}
+
+.tour-controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.tour-icon-btn {
+    background: #1A2B3D;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.tour-icon-btn:hover {
+    background: #a2dc3c;
+    border-color: rgba(255, 255, 255, 0.3) ;
+}
+
+.tour-icon-btn:active {
+    background: #0a1520;
+}
+
+.tour-viewer {
+    position: relative;
+    background: #1A2B3D;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 420px;
+    transition: min-height 0.3s ease;
+}
+
+.tour-viewer.zoomed {
+    min-height: 620px;
+    transition: min-height 0.3s ease;
+}
+
+.viewer-label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: white;
+}
+
+.viewer-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.4s ease, object-position 0.3s ease;
+}
+
+.viewer-label p { margin: 0;}
+.viewer-label .small {font-size: 11px; color: #aaa; text-transform: uppercase;}
+.viewer-label .name {font-weight: bold; font-size: 16px;}
+
+.viewer-compass {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #1A2B3D;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.viewer-arrows {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 36px);
+  grid-template-rows: repeat(2, 36px);
+  gap: 4px;
+}
+
+.arrow-btn {
+    background: #555;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.viewer-start-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: #f97316;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.gallery-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 1px;
+    margin-top: 24px;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 12px;
+}
+
+
+.location-card {
+  flex: 1;
+  min-height: 120px;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.location-card:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    border-color: #fd954a;
+}
+
+.location-card.active {
+    border-color: #f97316;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6)) ;
+}
+
+.location-card .card-tag {
+    color: #f97316;
+    font-size: 11px;
+    font-weight: bold;
+    display: block;
+}
+
+.location-card .card-label {
+    color: white;
+    margin: 0;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .tour-section {
+        padding: 24px 16px;
+    }
+
+    .tour-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tour-title {
+        font-size: 22px;
+    }
+
+    .tour-viewer {
+        min-height: 260px;
+    }
+
+    .gallery-grid {
+        flex-wrap: wrap;
+    }
+
+    .location-card {
+        flex: 1 1 calc(50% - 6px);
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-card {
+        flex: 1 1 100%;
+    }
+}

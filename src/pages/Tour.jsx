@@ -1,5 +1,12 @@
+import VirtualTourSection from "../components/VirtualTourSection";
+
+
 function Tour() {
-  return <div>Tour Page</div>;
+  return (
+  <div>
+    <VirtualTourSection />
+  </div>
+  )
 }
 
 
