@@ -1,0 +1,154 @@
+/* الأساسيات */
+.booking-container {
+  padding: 40px 5%;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in { opacity: 1; }
+
+.booking-header { margin-bottom: 35px; }
+.booking-title { font-size: 34px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
+.booking-subtitle { color: #64748b; font-size: 15px; margin-top: 5px; }
+
+/* الـ Grid */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+  align-items: start;
+}
+
+/* الكروت وحبشتكناتها */
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #f1f5f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* التقويم */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+  gap: 12px;
+}
+
+.day-cell {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-free { background: #f0fdf4; color: #16a34a; }
+.status-busy { background: #fef2f2; color: #dc2626; opacity: 0.7; }
+
+.day-cell:hover:not(.status-busy) { background: #1e293b; color: white; }
+
+.day-cell.selected {
+  background: #1e293b !important;
+  color: white !important;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+}
+
+/* الزراير */
+.sport-btn, .time-btn {
+  padding: 12px 24px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.sport-btn.active, .time-btn.active {
+  background: #1e293b;
+  color: white;
+  border-color: #1e293b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* السمارى المحبشتكن */
+.summary-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.sticky-summary { position: sticky; top: 30px; }
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.availability-badge {
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.availability-badge.success { background: #f0fdf4; color: #16a34a; }
+.availability-badge.danger { background: #fff7ed; color: #c2410c; }
+
+.price-row.total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #f1f5f9;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.total-value { color: #10b981; }
+
+/* زرار التأكيد وحبشتكنات الحركة */
+.confirm-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 18px;
+  background: #f97316;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pulse-animation:hover {
+  background: #ea580c;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+  70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+@media (max-width: 1024px) { .booking-grid { grid-template-columns: 1fr; } }
