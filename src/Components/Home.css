@@ -62,7 +62,7 @@
   justify-content: center;
 }
 
-.hero-title .highlight {
+.hero-title .highlightt {
   color: #ff7c1f;
 }
 
@@ -271,7 +271,7 @@
   opacity: 0.95;
 }
 
-.location {
+.locationn {
   padding: 72px 0 112px;
   display: grid;
   place-items: center;
@@ -282,7 +282,7 @@
 
 }
 
-.location::before {
+.locationn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -293,7 +293,7 @@
   opacity: 0.65;
 }
 
-.location::after {
+.locationn::after {
   content: "";
   position: absolute;
   width: 380px;
@@ -307,7 +307,7 @@
   z-index: 0;
 }
 
-.location-card {
+.locationn-card {
   max-width: 420px;
   width: min(420px, 100%);
   border-radius: 20px;
@@ -324,7 +324,7 @@
   margin: 0 auto;
 }
 
-.location-icon {
+.locationn-icon {
   display: inline-flex;
   width: 48px;
   height: 48px;
@@ -337,19 +337,19 @@
   margin: 0 auto;
 }
 
-.location-card h3 {
+.locationn-card h3 {
   margin: 0;
   font-size: 23px;
   color: #0b122b;
 }
 
-.location-card p {
+.locationn-card p {
   margin: 0;
   color: rgba(11, 18, 43, 0.75);
   line-height: 1.6;
 }
 
-.location-link {
+.locationn-link {
   display: inline-block;
   margin-top: 6px;
   font-weight: 700;
@@ -357,7 +357,7 @@
   text-decoration: none;
 }
 
-.location-link:hover {
+.locationn-link:hover {
   text-decoration: underline;
 }
 
@@ -457,7 +457,7 @@
     justify-content: start;
   }
 
-  .location-card h3 {
+  .locationn-card h3 {
     font-size: 27px;
   }
 }
@@ -510,15 +510,15 @@
     font-size: 27px;
   }
 
-  .location {
+  .locationn {
     padding: 36px 0 56px;
   }
 
-  .location-card {
+  .locationn-card {
     padding: 20px;
   }
 
-  .location-card h3 {
+  .locationn-card h3 {
     font-size: 18px;
   }
 }

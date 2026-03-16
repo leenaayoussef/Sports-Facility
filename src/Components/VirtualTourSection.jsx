@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import html2canvas from "html2canvas";
-import "./virtualtour.css";
+import "./VirtualTour.css";
 import VirtualTourViewer from "./VirtualTourViewer";
 import LocationCard from "./LocationCard";
 import img1 from '../assets/MainCourt.jpg'
@@ -15,7 +15,7 @@ const locations = [
     {id: 1, label: "Main Court", tag:"CURRENT", img: img1},
     {id: 2, label: "Soccer Field", tag: null , img: img2},
     {id: 3, label: "Olympic Pool", tag: null , img: img3},
-    {id: 4, label: "Soccer Field", tag: null , img: img4}
+    {id: 4, label: "Training Gym", tag: null , img: img4}
 ];
 
 function VirtualTourSection() {

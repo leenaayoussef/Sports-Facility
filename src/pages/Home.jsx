@@ -49,7 +49,7 @@ function Home() {
           <div className="hero-overlay">
             <span className="hero-badge"> ● New season open</span>
             <h1 className="hero-title">
-              Welcome to <span className="highlight">Champions</span>
+              Welcome to <span className="highlightt">Champions</span>
               <span className="hero-title-line2">Arena</span>
             </h1>
             <p className="hero-subtitle">
@@ -131,16 +131,16 @@ function Home() {
           </div>
         </section>
 
-        <section className="location" aria-label="Facility location">
-          <div className="location-card">
-            <div className="location-icon" aria-hidden="true"><img src={logo1} height="60px" alt="Location icon" /></div>
+        <section className="locationn" aria-label="Facility location">
+          <div className="locationn-card">
+            <div className="locationn-icon" aria-hidden="true"><img src={logo1} height="60px" alt="Location icon" /></div>
             <h3>Find Us</h3>
             <p>
               1200 Championship Way,
               <br />
               Sport City, CA 90210
             </p>
-            <a className="location-link" href="https://www.google.com/maps/search/?api=1&query=1200+Championship+Way,+Sport+City,+CA+90210" target="_blank" rel="noopener noreferrer">
+            <a className="locationn-link" href="https://www.google.com/maps/search/?api=1&query=1200+Championship+Way,+Sport+City,+CA+90210" target="_blank" rel="noopener noreferrer">
               Get directions →
             </a>
           </div>

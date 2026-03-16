@@ -85,6 +85,29 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.time-btn.free {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.time-btn.busy {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.times-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-btn.active {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
 /* السمارى المحبشتكن */
 .summary-card {
   background: white;
@@ -149,6 +172,13 @@
   0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
   70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+.confirm-btn:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  animation: none;
 }
 
 @media (max-width: 1024px) { .booking-grid { grid-template-columns: 1fr; } }
