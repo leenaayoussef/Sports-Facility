@@ -84,7 +84,16 @@
 }
 
 .join-btn:hover {
-  background-color: #F97316;
+  background-color: #c2ff40;
+}
+
+.join-btn.active {
+  background-color: #c2ff40 !important;
+  color: #1a1a1a !important;
+}
+
+.join-btn.active:hover {
+  background-color: #aadd20 !important;
 }
 
 
@@ -102,8 +111,8 @@
 .bar {
   display: block;      
   width: 25px;        
-  height: 3px;         
-  margin: 5px auto;    
+  height: 1px;         
+  margin: 4px auto;    
   background-color: #ffffff; 
   transition: 0.3s ease;
 }

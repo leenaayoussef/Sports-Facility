@@ -10,7 +10,7 @@ import Booking from './pages/Booking';
 import Membership from './pages/Membership';
 import Profile from './pages/Profile';
 import Tour from './pages/Tour';
-import Signup from './pages/Signup';
+
 import Login from './pages/Login';
 import Payment from './pages/Payment';
 import Facilities from './pages/Facilities';
@@ -32,7 +32,7 @@ function App() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/tour" element={<Tour />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Login  />} />
           <Route path="/login" element={<Login />} />
 
         </Routes>
