@@ -1,51 +1,101 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../Context/UserContext'
 import '../Components/Login.css'
 
 const LoginPage = () => {
   const [showWelcome, setShowWelcome] = useState(false)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [isLogin, setIsLogin] = useState(true)
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  })
+  const [error, setError] = useState('')
   const navigate = useNavigate()
+  const { login, signup, user } = useContext(UserContext)
 
- 
-  const CORRECT_USERNAME = 'hima'
-  const CORRECT_PASSWORD = 'c2c1234'
+  // إذا كان المستخدم مسجل بالفعل، انقله للصفحة الرئيسية
+  useEffect(() => {
+    if (user) {
+      navigate('/profile')
+    }
+  }, [user, navigate])
 
   useEffect(() => {
     const wrapper = document.querySelector('.wrapper')
     const registerLink = document.querySelector('.register-link')
     const loginLink = document.querySelector('.login-link')
 
-    const handleRegister = () => wrapper.classList.add('active')
-    const handleLogin = () => wrapper.classList.remove('active')
+    const handleRegister = () => {
+      wrapper.classList.add('active')
+      setIsLogin(false)
+    }
+    const handleLogin = () => {
+      wrapper.classList.remove('active')
+      setIsLogin(true)
+    }
 
-    registerLink.addEventListener('click', handleRegister)
-    loginLink.addEventListener('click', handleLogin)
+    registerLink?.addEventListener('click', handleRegister)
+    loginLink?.addEventListener('click', handleLogin)
 
     return () => {
-      registerLink.removeEventListener('click', handleRegister)
-      loginLink.removeEventListener('click', handleLogin)
+      registerLink?.removeEventListener('click', handleRegister)
+      loginLink?.removeEventListener('click', handleLogin)
     }
   }, [])
 
-  function handleLogin(e) {
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+    setError('')
+  }
+
+  const handleLoginSubmit = (e) => {
     e.preventDefault()
-    if (username === CORRECT_USERNAME && password === CORRECT_PASSWORD) {
+    const result = login(formData.email, formData.password)
+    
+    if (result.success) {
       setShowWelcome(true)
       setTimeout(() => {
         setShowWelcome(false)
         navigate('/profile')
       }, 2500)
     } else {
-      alert('يوزر نيم أو باسورد غلط!')
+      setError(result.message)
+    }
+  }
+
+  const handleSignupSubmit = (e) => {
+    e.preventDefault()
+    
+    if (!formData.username || !formData.email || !formData.password) {
+      setError('Please fill in all fields')
+      return
+    }
+
+    const result = signup(formData.username, formData.email, formData.password)
+    
+    if (result.success) {
+      setShowWelcome(true)
+      setTimeout(() => {
+        setShowWelcome(false)
+        setFormData({ username: '', email: '', password: '' })
+        const wrapper = document.querySelector('.wrapper')
+        wrapper.classList.remove('active')
+        setIsLogin(true)
+        setError('')
+      }, 2500)
+    } else {
+      setError(result.message)
     }
   }
 
   return (
     <div className="wrapper">
-
-      {}
       {showWelcome && (
         <div style={{
           position: 'fixed',
@@ -63,33 +113,50 @@ const LoginPage = () => {
           boxShadow: '0 0 30px rgba(0,0,0,0.3)',
           animation: 'fadeIn 0.3s ease'
         }}>
-          🏆 Welcome Back, {username}!
+          🏆 Welcome {formData.username || 'Welcome'}!
+        </div>
+      )}
+
+      {error && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          backgroundColor: '#ff6b6b',
+          color: '#ffffff',
+          padding: '1rem 1.5rem',
+          borderRadius: '8px',
+          zIndex: 9998
+        }}>
+          {error}
         </div>
       )}
 
       <span className="rotate-bg"></span>
       <span className="rotate-bg2"></span>
 
-      {}
+      {/* Login Form */}
       <div className="form-box login">
         <h2 className="title animation" style={{"--i": 0, "--j": 21}}>Login</h2>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLoginSubmit}>
           <div className="input-box animation" style={{"--i": 1, "--j": 22}}>
             <input 
-              type="text" 
+              type="email" 
+              name="email"
               required 
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={formData.email}
+              onChange={handleChange}
             />
-            <label>Username</label>
-            <i className='bx bxs-user'></i>
+            <label>Email</label>
+            <i className='bx bxs-envelope'></i>
           </div>
           <div className="input-box animation" style={{"--i": 2, "--j": 23}}>
             <input 
-              type="password" 
+              type="password"
+              name="password" 
               required 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={handleChange}
             />
             <label>Password</label>
             <i className='bx bxs-lock-alt'></i>
@@ -98,12 +165,12 @@ const LoginPage = () => {
             ENTER THE ARENA
           </button>
           <div className="linkTxt animation" style={{"--i": 5, "--j": 25}}>
-            <p>New Champion? <a href="#" className="register-link">Sign Up</a></p>
+            <p>Don't have an account?<a href="#" className="register-link">Create Account</a></p>
           </div>
         </form>
       </div>
 
-      {}
+      {/* Login Info */}
       <div className="info-text login">
         <h2 className="animation" style={{"--i": 0, "--j": 20}}>WELCOME <br />CHAMPIONS</h2>
         <p className="animation" style={{"--i": 1, "--j": 21}}>
@@ -111,22 +178,40 @@ const LoginPage = () => {
         </p>
       </div>
 
-      {}
+      {/* Sign Up Form */}
       <div className="form-box register">
         <h2 className="title animation" style={{"--i": 17, "--j": 0}}>Sign Up</h2>
-        <form action="#">
+        <form onSubmit={handleSignupSubmit}>
           <div className="input-box animation" style={{"--i": 18, "--j": 1}}>
-            <input type="text" required />
+            <input 
+              type="text" 
+              name="username"
+              required 
+              value={formData.username}
+              onChange={handleChange}
+            />
             <label>Username</label>
             <i className='bx bxs-user'></i>
           </div>
           <div className="input-box animation" style={{"--i": 19, "--j": 2}}>
-            <input type="email" required />
+            <input 
+              type="email" 
+              name="email"
+              required 
+              value={formData.email}
+              onChange={handleChange}
+            />
             <label>Email</label>
             <i className='bx bxs-envelope'></i>
           </div>
           <div className="input-box animation" style={{"--i": 20, "--j": 3}}>
-            <input type="password" required />
+            <input 
+              type="password" 
+              name="password"
+              required 
+              value={formData.password}
+              onChange={handleChange}
+            />
             <label>Password</label>
             <i className='bx bxs-lock-alt'></i>
           </div>
@@ -134,12 +219,12 @@ const LoginPage = () => {
             JOIN THE ELITE
           </button>
           <div className="linkTxt animation" style={{"--i": 22, "--j": 5}}>
-            <p>Already a member? <a href="#" className="login-link">Login</a></p>
+            <p>Already have an account?<a href="#" className="login-link">Login</a></p>
           </div>
         </form>
       </div>
 
-      {}
+      {/* Sign Up Info */}
       <div className="info-text register">
         <h2 className="animation" style={{"--i": 17, "--j": 0}}>BECOME <br />LEGENDARY</h2>
         <p className="animation" style={{"--i": 18, "--j": 1}}>

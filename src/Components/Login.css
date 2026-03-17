@@ -18,9 +18,6 @@ body{
     background: #ffffff;
 }
 .wrapper{
-    margin-top: 30px;
-    margin-left: 190px;
-    margin-bottom: 30px;
     position: relative;
     width: 770px;
     height: 450px;
@@ -29,6 +26,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 0 25px var(--lime);
     overflow: hidden;
+    margin: 80px auto;
 }
 .wrapper .form-box{
     position: absolute;

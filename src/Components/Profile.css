@@ -240,3 +240,38 @@
     font-size: 28px;
   }
 }
+
+/* Profile Actions */
+.profile-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-actions button {
+  transition: all 0.3s ease;
+}
+
+.profile-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Edit Image Label */
+.edit-image-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #C2FF40;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.edit-image-label:hover {
+  transform: scale(1.1);
+}

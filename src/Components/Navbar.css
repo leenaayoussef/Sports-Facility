@@ -159,6 +159,29 @@
   
 }
 
+/* User Logged In Styles */
+.user-name {
+  color: #C2FF40;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.logout-btn {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
 
 
 

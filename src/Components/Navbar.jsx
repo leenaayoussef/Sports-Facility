@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/dumbbell.png';
+import { UserContext } from '../Context/UserContext';
 import './Navbar.css'; 
 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useContext(UserContext);
 
   function toggleMenu() {
     setIsOpen(!isOpen);
+  }
+
+  const handleLogout = () => {
+    logout();
+    setIsOpen(false);
   }
 
   return (
@@ -38,8 +45,17 @@ function Navbar() {
       </div>
 
       <div className="navbar-auth">
-        <Link to="/login" className="login-btn">Login</Link>
-        <Link to="/signup" className="join-btn">Join Now</Link>
+        {user ? (
+          <>
+            <span className="user-name">Hello, {user.username}</span>
+            <button onClick={handleLogout} className="logout-btn">Logout</button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="login-btn">Login</Link>
+            <Link to="/signup" className="join-btn">Join Now</Link>
+          </>
+        )}
       </div>
     </nav>
   );

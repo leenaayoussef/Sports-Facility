@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'; 
+import { UserProvider } from './Context/UserContext';
 
 import Navbar from './components/Navbar'; 
 import Footer from './components/Footer';
@@ -18,27 +19,29 @@ import Facilities from './pages/Facilities';
 function App() {
 
   return (
-    <Router>
-      <div className="App">
+    <UserProvider>
+      <Router>
+        <div className="App">
 
-        <Navbar /> 
+          <Navbar /> 
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/Membership" element={<Membership />} />
-          <Route path="/facilities" element={<Facilities />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/tour" element={<Tour />} />
-          <Route path="/signup" element={<Login  />} />
-          <Route path="/login" element={<Login />} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/Membership" element={<Membership />} />
+            <Route path="/facilities" element={<Facilities />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/tour" element={<Tour />} />
+            <Route path="/signup" element={<Login  />} />
+            <Route path="/login" element={<Login />} />
 
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </UserProvider>
   );
 }
 

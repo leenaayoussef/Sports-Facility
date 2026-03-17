@@ -28,11 +28,10 @@ function VirtualTourViewer(props) {
     return (
         <div className={`tour-viewer ${props.isZoomed ? "zoomed" : ""}`}
         ref={props.viewerRef}>
-            <img
-             src={props.currentImg}
-             alt={props.currentLocation}
+            <div
              className="viewer-img"
-             style={{ objectPosition: `${posX}% ${posY}%` }} />
+             style={{ backgroundImage: `url(${props.currentImg})`, backgroundPosition: `${posX}% ${posY}%` }}
+             alt={props.currentLocation} />
              
             <div className="viewer-label">
                 <p className="small">Currenlty Viewing</p>
