@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { UserContext } from "../Context/UserContext";
 import "../Components/Booking.css";
 
 function Booking() {
+  const { user } = useContext(UserContext);
   const [selectedSport, setSelectedSport] = useState("Tennis");
   const [selectedDay, setSelectedDay] = useState(16);
   const [selectedTime, setSelectedTime] = useState("02:00 PM");
@@ -17,6 +19,35 @@ function Booking() {
       alert(`Booking confirmed successfully for ${location.state.date}!`);
     }
   }, [location.state]);
+
+  if (!user) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '50vh',
+        flexDirection: 'column',
+        gap: '20px'
+      }}>
+        <h2>Please log in first to booking.</h2>
+        <button
+          onClick={() => navigate('/login')}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#C2FF40',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            fontSize: '16px',
+            fontWeight: 'bold'
+          }}
+        >
+          Go to Login
+        </button>
+      </div>
+    );
+  }
 
   const sports = [
     { name: "Tennis", price: 50 },
@@ -41,6 +72,34 @@ function Booking() {
   };
 
   const isBusy = isSlotBusy(selectedDay, selectedTime);
+
+  const handleBooking = () => {
+    if (isBusy) {
+      alert("This time slot is busy. Please choose another time.");
+      return;
+    }
+
+    const bookingData = {
+      sport: selectedSport,
+      date: `March ${selectedDay}, 2026`,
+      time: selectedTime,
+      price: currentPrice,
+      userId: user.id,
+      userName: user.username
+    };
+
+    // حفظ الحجز في localStorage
+    const existingBookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+    existingBookings.push(bookingData);
+    localStorage.setItem('bookings', JSON.stringify(existingBookings));
+
+    navigate('/booking-confirmation', {
+      state: {
+        success: true,
+        booking: bookingData
+      }
+    });
+  };
 
   return (
     <div className={`booking-container ${isVisible ? "fade-in" : ""}`}>

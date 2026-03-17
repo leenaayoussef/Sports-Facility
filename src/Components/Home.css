@@ -82,7 +82,7 @@
   text-align: center;
 }
 
-.hero-buttons {
+.hero-buttonss {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -100,18 +100,18 @@
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
-.btn-primary {
+.btn-primaryy {
   background-color: #f97316;
   color: white;
 }
 
-.btn-secondary {
+.btn-secondaryy {
   background: rgba(255, 255, 255, 0.1);
   border-color: #BEF264;
   color: #BEF264;
 }
 
-.btn-tertiary {
+.btn-tertiaryy {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.55);
   color: rgba(255, 255, 255, 0.92);

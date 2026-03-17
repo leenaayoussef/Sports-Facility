@@ -56,16 +56,16 @@ function Home() {
               Where champions train and legends are made. Experience the future of athletic performance in our world-class facility.
             </p>
 
-            <div className="hero-buttons">
-              <Link to="/booking" className="btn btn-primary">
+            <div className="hero-buttonss">
+              <Link to="/booking" className="btn btn-primaryy">
               <img src={logo2} alt="Booking icon" className='logo-welcome'/>
                 Book Now
               </Link>
-              <Link to="/tour" className="btn btn-secondary">
+              <Link to="/tour" className="btn btn-secondaryy">
               <img src={logo5} alt="Tour icon" className='logo-welcome'/>
                 Virtual Tour
               </Link>
-              <button className="btn btn-tertiary" onClick={() => setContactModalOpen(true)}>
+              <button className="btn btn-tertiaryy" onClick={() => setContactModalOpen(true)}>
               <img src={logo3} alt="Contact icon" className='logo-welcome'/>
                 Contact Us
               </button>

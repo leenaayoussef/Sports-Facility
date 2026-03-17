@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/dumbbell.png';
 import { UserContext } from '../Context/UserContext';
 import './Navbar.css'; 
@@ -8,6 +8,7 @@ import './Navbar.css';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useContext(UserContext);
+  const navigate = useNavigate();
 
   function toggleMenu() {
     setIsOpen(!isOpen);
@@ -37,7 +38,6 @@ function Navbar() {
      
       <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
         <Link to="/home" onClick={() => setIsOpen(false)}>Home</Link>
-        <Link to="/profile" onClick={() => setIsOpen(false)}>Profile</Link>
         <Link to="/facilities" onClick={() => setIsOpen(false)}>Facilities</Link>
         <Link to="/booking" onClick={() => setIsOpen(false)}>Bookings</Link>
         <Link to="/membership" onClick={() => setIsOpen(false)}>Memberships</Link>
@@ -47,7 +47,22 @@ function Navbar() {
       <div className="navbar-auth">
         {user ? (
           <>
-            <span className="user-name">Hello, {user.username}</span>
+            <button 
+              onClick={() => {
+                navigate('/profile');
+                setIsOpen(false);
+              }}
+              className="user-profile-btn"
+            >
+              <div className="user-profile">
+                {user.profileImage ? (
+                  <img src={user.profileImage} alt={user.username} className="profile-img" />
+                ) : (
+                  <div className="profile-img-placeholder">{user.username.charAt(0).toUpperCase()}</div>
+                )}
+                <span className="user-name">Hello, {user.username}</span>
+              </div>
+            </button>
             <button onClick={handleLogout} className="logout-btn">Logout</button>
           </>
         ) : (
