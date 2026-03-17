@@ -50,6 +50,7 @@
 }
 
 .hero-title {
+  color: white;
   font-size: clamp(38px, 6vw, 80px);
   letter-spacing: -0.06em;
   line-height: 1.05;

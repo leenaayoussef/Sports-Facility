@@ -24,15 +24,16 @@ function App() {
         <Navbar /> 
 
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
-          <Route path="/memberships" element={<Membership />} />
+          <Route path="/Membership" element={<Membership />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/payment" element={<Payment />} />
-          {/* <Route path="/profile" element={<Profile />} /> */}
+          <Route path="/profile" element={<Profile />} />
           <Route path="/tour" element={<Tour />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
 
         </Routes>
         <Footer />

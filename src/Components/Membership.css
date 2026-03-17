@@ -1,11 +1,11 @@
-/* Membership Page Style */
+
 .membership-page {
   font-family: 'Montserrat', sans-serif;
   background-color: #F2F3F3;
   min-height: 100vh;
 }
 
-/* Hero Section */
+
 .membership-hero {
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
   margin: 0 auto;
 }
 
-.hero-tag {
+.hero-tagg {
   display: inline-block;
   background-color: #E5E7E9;
   color: #1A2B3D;
@@ -29,7 +29,7 @@
   text-align: center;
 }
 
-.hero-title {
+.hero-titlee {
   font-size: 60px;
   white-space: nowrap;
   font-weight: 800;
@@ -39,7 +39,7 @@
   text-align: center;
 }
 
-.hero-subtitle {
+.hero-subtitlee {
   font-size: 18px;
   color: #4A5568;
   max-width: 650px;
@@ -49,7 +49,7 @@
   text-align: center;
 }
 
-/* Price Section */
+
 .pricing-section {
   padding: 32px 32px 64px;
 }
@@ -263,7 +263,7 @@
   color: #CBD5E0;
 }
 
-/* Comparison Section */
+
 .comparison-section {
   padding: 64px 32px;
   background: white;
@@ -352,9 +352,9 @@
   font-weight: 500;
 }
 
-/* CTA Section */
+
 .cta-section {
-  background: #1A2B3D;
+  background: #0a1a2a;
   padding: 60px 2px;
   display: flex;
   align-items: center;
@@ -455,7 +455,6 @@
   display: block;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 44px;

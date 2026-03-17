@@ -1,5 +1,8 @@
 import '../Components/Membership.css';
 import { Link } from 'react-router-dom';
+import gymInterior from '../assets/gym-interior.jpg';
+import '../Components/Membership.css';
+
 
 function Membership() {
   const plans = [
@@ -59,17 +62,16 @@ function Membership() {
     <>
       
       <div className="membership-page">
-        {/* Hero Section */}
+
         <section className="membership-hero">
-          <span className="hero-tag">ELEVATE YOUR GAME</span>
-          <h1 className="hero-title">THE VIP EXPERIENCE</h1>
-          <p className="hero-subtitle">
+          <span className="hero-tagg">ELEVATE YOUR GAME</span>
+          <h1 className="hero-titlee">THE VIP EXPERIENCE</h1>
+          <p className="hero-subtitlee">
             Join the elite tier of athletes. Choose a membership plan designed to 
             push your limits and maximize your potential at Champions Arena.
           </p>
         </section>
 
-        {/* Pricing Cards */}
         <section className="pricing-section">
           <div className="pricing-cards">
             {plans.map((plan, index) => (
@@ -108,7 +110,6 @@ function Membership() {
           </div>
         </section>
 
-        {/* Comparison Table */}
         <section className="comparison-section">
           <h2 className="section-title">BENEFITS COMPARISON</h2>
           <p className="section-subtitle">Find the right plan for your fitness journey.</p>
@@ -161,7 +162,6 @@ function Membership() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="cta-section">
           <div className="cta-content">
             <h2 className="cta-title">TRAIN LIKE A CHAMPION.</h2>
@@ -176,10 +176,8 @@ function Membership() {
             </div>
           </div>
           <div className="cta-image">
-            <img 
-              src="\src\assets\gym-interior.jpg" 
-              alt="Gym interior" 
-            />
+          <img src={gymInterior} alt="Gym interior" />
+
           </div>
         </section>
       </div>

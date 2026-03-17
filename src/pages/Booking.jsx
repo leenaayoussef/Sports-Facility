@@ -21,7 +21,7 @@ function Booking() {
   const sports = [
     { name: "Tennis", price: 50 },
     { name: "Basketball", price: 40 },
-    { name: "Futsal", price: 60 },
+    { name: "Soccer", price: 60 },
     { name: "Volleyball", price: 35 }
   ];
 
@@ -51,7 +51,7 @@ function Booking() {
 
       <div className="booking-grid">
         <div className="booking-left">
-          {/* 1. Sport Selection */}
+
           <div className="card hover-effect">
             <h3>1. Choose Sport</h3>
             <div className="sports">
@@ -67,7 +67,7 @@ function Booking() {
             </div>
           </div>
 
-          {/* 2. Calendar */}
+
           <div className="card hover-effect">
             <div className="card-header">
               <h3>2. Select Date (March)</h3>
@@ -92,7 +92,7 @@ function Booking() {
             </div>
           </div>
 
-          {/* 3. Time Slots */}
+
           <div className="card hover-effect">
             <h3>3. Time Slot</h3>
             <div className="times-grid">
@@ -109,7 +109,7 @@ function Booking() {
           </div>
         </div>
 
-        {/* 4. Booking Summary */}
+
         <div className="booking-right">
           <div className="summary-card sticky-summary">
             <h3 className="summary-title">Booking Summary</h3>

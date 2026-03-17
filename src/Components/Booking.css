@@ -1,4 +1,3 @@
-/* الأساسيات */
 .booking-container {
   padding: 40px 5%;
   background: #f8fafc;
@@ -14,7 +13,6 @@
 .booking-title { font-size: 34px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
 .booking-subtitle { color: #64748b; font-size: 15px; margin-top: 5px; }
 
-/* الـ Grid */
 .booking-grid {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -22,7 +20,6 @@
   align-items: start;
 }
 
-/* الكروت وحبشتكناتها */
 .card {
   background: white;
   padding: 24px;
@@ -37,7 +34,6 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* التقويم */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
@@ -67,7 +63,6 @@
   box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
 }
 
-/* الزراير */
 .sport-btn, .time-btn {
   padding: 12px 24px;
   border: 1.5px solid #e2e8f0;
@@ -108,7 +103,6 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* السمارى المحبشتكن */
 .summary-card {
   background: white;
   padding: 30px;
@@ -148,7 +142,6 @@
 
 .total-value { color: #10b981; }
 
-/* زرار التأكيد وحبشتكنات الحركة */
 .confirm-btn {
   width: 100%;
   margin-top: 25px;
